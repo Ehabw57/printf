@@ -1,12 +1,12 @@
 #include "main.h"
+#include <stdio.h>
 
 int _printf(const char *format, ...)
 {
 	form arr[] = {
 		{'s', print_str},
 		{'c', print_char},
-		{'\0', NULL}
-		};
+		{'\0', NULL}};
 
 	va_list List;
 	int i = 0, j, len = 0;
@@ -18,24 +18,27 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			i++;
+
 			j = 0;
-			sum += 2;
+			i++;
 			while (arr[j].f != '\0')
 			{
-				
 				if ((format[i]) == arr[j].f)
 				{
-					 len += arr[j].fun(List);
+					sum += 2;
+					len += arr[j].fun(List);
 				}
 
 				j++;
-				
 			}
+
 			i++;
 		}
+		else
+		{
 		_putchar(format[i]);
 		i++;
+		}
 	}
 	va_end(List);
 	return (i + len - sum);
