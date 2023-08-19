@@ -3,10 +3,10 @@
 int _printf(const char *format, ...)
 {
 	form arr[] = {
-		{'i', print_str},
+		{'s', print_str},
 		{'c', print_char},
-		{NULL, NULL}
-	};
+		{'\0', NULL}
+		};
 
 	va_list List;
 	int i = 0, j;
@@ -17,13 +17,21 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
+			i++;
 			j = 0;
-			while (arr[j] != NULL)
+			while (arr[j].f != '\0')
 			{
-				if ((format[i + 1]) == form[j].f)
-					form[j].fun(List);
+				
+				if ((format[i]) == arr[j].f)
+				{
+				 arr[j].fun(List);
+
+				}
+
 				j++;
+				
 			}
+			i++;
 		}
 		_putchar(format[i]);
 		i++;
