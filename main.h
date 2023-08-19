@@ -4,13 +4,16 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 typedef struct format
 {
-	char form;
-	void (*f)(va_list);
+	char f;
+	int (*fun)(va_list);
 }format;
 
 int _printf(const char *format, ...);
 int _putchar(int s);
-void print_str(char *c);
+int print_str(char *c);
+int print_char(char c);
+
 #endif
