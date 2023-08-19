@@ -9,7 +9,8 @@ int _printf(const char *format, ...)
 		};
 
 	va_list List;
-	int i = 0, j;
+	int i = 0, j, len = 0;
+	int sum = 0;
 	va_start(List, format);
 
 	while (format != NULL && format[i] != '\0')
@@ -19,13 +20,13 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			j = 0;
+			sum += 2;
 			while (arr[j].f != '\0')
 			{
 				
 				if ((format[i]) == arr[j].f)
 				{
-				 arr[j].fun(List);
-
+					 len += arr[j].fun(List);
 				}
 
 				j++;
@@ -37,4 +38,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(List);
+	return (i + len - sum);
 }
