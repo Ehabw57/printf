@@ -2,7 +2,7 @@
 
 int _printf(const char *format, ...)
 {
-	arr[] = {
+	form arr[] = {
 		{'i', print_str},
 		{'c', print_char},
 		{NULL, NULL}
@@ -17,9 +17,13 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			while (List != NULL)
-			if ((format[i + 1]) == form[j].f)
-				form[j].fun(List);
+			j = 0;
+			while (arr[j] != NULL)
+			{
+				if ((format[i + 1]) == form[j].f)
+					form[j].fun(List);
+				j++;
+			}
 		}
 		_putchar(format[i]);
 		i++;
