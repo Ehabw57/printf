@@ -7,18 +7,26 @@ int _printf(const char *format, ...)
 		{'s', print_str},
 		{'c', print_char},
 		{'i', print_int},
+<<<<<<< HEAD
 		{'d', print_INT},
+=======
+		{'d', print_int},
+		{'%', print_percent},
+>>>>>>> fb337e95e589808ec1661e385b96251acda9fd6a
 		{'\0', NULL}};
-
+	int i = 0, j = 0, len = 0, sum = 0;
 	va_list List;
-	int i = 0, j, len = 0;
-	int sum = 0;
+
 	va_start(List, format);
+	if (format == NULL)
+	{
+		exit(-1);
+	}
 
 	while (format != NULL && format[i] != '\0')
 	{
 
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%')
 		{
 
 			j = 0;
@@ -34,13 +42,11 @@ int _printf(const char *format, ...)
 
 				j++;
 			}
-
-			
 		}
 		else
 		{
-		_putchar(format[i]);
-		i++;
+			_putchar(format[i]);
+			i++;
 		}
 	}
 	va_end(List);
