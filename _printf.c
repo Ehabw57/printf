@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[i] != '\0')
 	{
 
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
 
 			j = 0;
@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 			{
 				if ((format[i]) == arr[j].f)
 				{
+					i++;
 					sum += 2;
 					len += arr[j].fun(List);
 				}
@@ -32,7 +33,7 @@ int _printf(const char *format, ...)
 				j++;
 			}
 
-			i++;
+			
 		}
 		else
 		{
