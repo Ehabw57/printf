@@ -7,6 +7,7 @@ int _printf(const char *format, ...)
 		{'s', print_str},
 		{'c', print_char},
 		{'i', print_int},
+		{'d', print_INT},
 		{'\0', NULL}};
 
 	va_list List;
