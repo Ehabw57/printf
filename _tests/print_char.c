@@ -2,6 +2,13 @@
 int print_char(va_list arg)
 {
     char c = va_arg(arg, int);
+    if (c)
+    {
     _putchar(c);
     return (1);
+    }
+    else if (!c)
+    {
+        exit(-1);
+    }
 }

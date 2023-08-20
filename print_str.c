@@ -10,7 +10,11 @@ int print_str(va_list arg)
 		{
 			_putchar(c[i]);
 		}
+		return (i);
 	}
-
-	return (i);
+	else if (!c)
+	{
+		exit(-1);
+	}
+	
 }
