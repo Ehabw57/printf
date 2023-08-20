@@ -1,5 +1,5 @@
 #include "main.h"
-void rec (int n)
+void rec(int n)
 {
 	if (n / 10 > 0)
 		rec(n / 10);

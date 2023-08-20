@@ -9,17 +9,13 @@ typedef struct format
 {
 	char f;
 	int (*fun)(va_list);
-}form;
+} form;
 
 int _printf(const char *format, ...);
 int _putchar(int s);
 int print_str(va_list arg);
 int print_char(va_list arg);
 int print_int(va_list arg);
-<<<<<<< HEAD
 int print_INT(va_list arg);
-
-=======
-int print_percent();
->>>>>>> fb337e95e589808ec1661e385b96251acda9fd6a
+int print_percent(va_list args);
 #endif

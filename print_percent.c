@@ -1,6 +1,6 @@
 #include "main.h"
-int print_percent()
+int print_percent(va_list args)
 {
-    _putchar('%');
-    return (1);
+	_putchar('%');
+	return (1);
 }
