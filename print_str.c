@@ -4,17 +4,13 @@ int print_str(va_list arg)
 	int i = 0;
 	char *c = va_arg(arg, char *);
 
-	if (c)
+	if (!c)
 	{
-		for (i = 0; c[i] != '\0'; i++)
-		{
-			_putchar(c[i]);
-		}
-		return (i);
+		return (-1);
 	}
-	else if (!c)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		exit(-1);
+		_putchar(c[i]);
 	}
-	
+	return (i);
 }
