@@ -17,6 +17,7 @@ int print_INT(va_list arg)
 	{
 		_putchar('-');
 		z *= -1;
+		counter++;
 	}
 
 	rec(z, &counter);

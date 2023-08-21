@@ -33,5 +33,15 @@ int main(void)
     printf("Len:[%d]\n", len2);
       _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+    _printf("%d\n", INT_MAX);
+    printf("%d\n", INT_MIN);
+    len = _printf("%d\n", INT_MAX);
+    len2= printf("%d\n", INT_MAX);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    len = _printf("%d\n", INT_MIN);
+    len2= printf("%d\n", INT_MIN);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
     return (0);
 }
