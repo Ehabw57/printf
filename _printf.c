@@ -3,20 +3,22 @@
 
 int _printf(const char *format, ...)
 {
-	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_INT},
-		{'d', print_INT}, {'%', print_percent}, {'\0', NULL}};
+	form arr[] = {
+		{'s', print_str}, {'c', print_char},
+		{'i', print_INT}, {'d', print_INT},
+		{'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, j = 0, len = 0, sum = 0;
 	va_list List;
 
 	va_start(List, format);
-	if (format == NULL || (format[0] == '%' && !format[1]))
+
+	if ((format[i] == '%' && (format[i + 1] != ' ' || format[i + 1] == '\0')) || format == NULL)
 		return (-1);
-	if (format[0] == '%' && format[i] == ' ' && !format[2])
-		return (-1);
-	while (format != NULL && format[i] != '\0')
+
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && search_f(format[i + 1], "csid%") == 0)
 		{
 			j = 0;
 			i++;
@@ -31,7 +33,7 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
-		
+
 		else
 		{
 			_putchar(format[i]);
