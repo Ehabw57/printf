@@ -15,11 +15,11 @@ int _printf(const char *format, ...)
 	va_list List;
 
 	va_start(List, format);
-	if (format == NULL)
-	{
-		exit(-1);
-	}
+	if (format == NULL || (format[0] == '%' && !format[1]))
+		return (-1);
 
+	if (format[0] == '%' && format[i] == ' ' && !format[2])
+		return (-1);
 	while (format != NULL && format[i] != '\0')
 	{
 
