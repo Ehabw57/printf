@@ -10,7 +10,7 @@ void rec(int n, int *counter)
 int print_INT(va_list arg)
 {
 	int counter = 0;
-	int x = va_arg(arg, int);
+	unsigned int x = va_arg(arg, int);
 
 	if (x < 0)
 	{

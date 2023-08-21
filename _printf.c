@@ -3,8 +3,9 @@
 
 int _printf(const char *format, ...)
 {
-	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_int},
-		{'d', print_INT}, {'d', print_int}, {'%', print_percent}, {'\0', NULL}};
+	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_INT},
+		{'d', print_INT}, {'%', print_percent}, {'\0', NULL}};
+
 	int i = 0, j = 0, len = 0, sum = 0;
 	va_list List;
 
@@ -30,6 +31,7 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
+		
 		else
 		{
 			_putchar(format[i]);
