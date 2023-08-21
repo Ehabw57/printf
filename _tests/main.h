@@ -10,8 +10,8 @@ typedef struct format
 	char f;
 	int (*fun)(va_list);
 } form;
-
 int _printf(const char *format, ...);
+int search_f(char f, char *c);
 int _putchar(int s);
 int print_str(va_list arg);
 int print_char(va_list arg);
