@@ -5,7 +5,7 @@ int _printf(const char *format, ...)
 {
 	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_int},
 		{'d', print_INT}, {'d', print_int}, {'%', print_percent}, {'\0', NULL}};
-	int i = -1, j = 0, len = 0, sum = 0;
+	int i = 0, j = 0, len = 0, sum = 0;
 	va_list List;
 
 	va_start(List, format);
@@ -13,12 +13,13 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[i] == ' ' && !format[2])
 		return (-1);
-	while (format != NULL && format[++i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			j = -1;
-			while (arr[++j].f != '\0')
+			j = 0;
+			i++;
+			while (arr[j].f != '\0')
 			{
 				if ((format[i]) == arr[j].f)
 				{
@@ -26,11 +27,13 @@ int _printf(const char *format, ...)
 					sum += 2;
 					len += arr[j].fun(List);
 				}
+				j++;
 			}
 		}
 		else
 		{
-			_putchar(format[i++]);
+			_putchar(format[i]);
+			i++;
 		}
 	}
 	va_end(List);
