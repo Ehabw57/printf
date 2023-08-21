@@ -7,6 +7,7 @@ int _printf(const char *format, ...)
 		{'s', print_str},
 		{'c', print_char},
 		{'i', print_int},
+		{'d', print_INT},
 		{'d', print_int},
 		{'%', print_percent},
 		{'\0', NULL}};
