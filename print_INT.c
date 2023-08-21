@@ -7,7 +7,7 @@ void rec(int n)
 }
 int print_INT(va_list arg)
 {
-	int x = va_arg(arg, int);
+	int x = va_arg(arg, int), count = 0;
 
 	if (x < 0)
 	{
