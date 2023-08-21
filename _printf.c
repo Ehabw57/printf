@@ -3,7 +3,7 @@
 
 int _printf(const char *format, ...)
 {
-	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_INT},
+	form arr[] = {{'s', print_str},	{'c', print_char}, {'i', print_int},
 		{'d', print_INT}, {'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, j = 0, len = 0, sum = 0;
