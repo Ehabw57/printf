@@ -10,7 +10,12 @@ int _printf(const char *format, ...)
 
         int i = 0, len = 0, sum = 0, flag;
         va_list List;
-
+	
+	 if ((format[0] == '%' && format[1] == '\0') || format == NULL)
+                   return (-1);
+        
+                if (format[0] && format[1] == ' ' && format[2] == '\0')
+                return (-1);
         va_start(List, format);
 	while (format[i] != '\0')
 	{
