@@ -11,6 +11,7 @@ void rec_binary(unsigned int n, unsigned int *ptr)
 	if (n == 1)
 	{
 		_putchar(1 + '0');
+		(*ptr)++;
 		return;
 	}
 	r = n % 2;
@@ -18,6 +19,7 @@ void rec_binary(unsigned int n, unsigned int *ptr)
 	rec_binary(n, ptr);
 	_putchar(r + '0');
 	(*ptr)++;
+	return;
 }
 /**
  * print_Binary - is gonna be edited
