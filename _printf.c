@@ -1,10 +1,17 @@
 #include "main.h"
-#include <stdio.h>
 
+/**
+ * _printf - a vardaric function smilliar to printf from the stdio.h headder
+ * @format: string to be printed and search for format spicfire
+ * Return: the lenth of the text that has been printed or -1 if fails
+*/
 int _printf(const char *format, ...)
 {
-	form arr[] = {{'s', print_str}, {'c', print_char}, {'i', print_INT},
-		{'d', print_INT}, {'b', convert_binary}, {'%', print_percent}, {'\0', NULL}};
+	form arr[] = {
+				{'s', print_str}, {'c', print_char},
+				{'i', print_int}, {'d', print_INT},
+				{'b', convert_binary}, {'%', print_percent},
+				{'\0', NULL}};
 
 	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
