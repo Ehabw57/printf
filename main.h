@@ -5,10 +5,15 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+/**
+ * struct format - a struct to store the format spicifre and its own print fun
+ * @f: the format spicfire
+ * @fun: the print functions
+*/
 typedef struct format
 {
 	char f;
-	int (*fun)(va_list);
+	int (*fun)();
 } form;
 int _printf(const char *format, ...);
 int search_f(char f, char *c);
@@ -17,6 +22,6 @@ int print_str(va_list arg);
 int print_char(va_list arg);
 int print_int(va_list arg);
 int print_INT(va_list arg);
-int print_percent();
-int convert_binary(va_list arg);
+int print_percent(void);
+int print_binary(va_list arg);
 #endif

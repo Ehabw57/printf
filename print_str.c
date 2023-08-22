@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * print_str - prints a given string to the stdip using _putchar
+ * @arg: va_list parameter used to locate the given string
+ * Return: the lenth of the string that has been printed
+ */
 int print_str(va_list arg)
 {
 	int i = 0;

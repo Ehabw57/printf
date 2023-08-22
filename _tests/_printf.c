@@ -1,43 +1,40 @@
 #include "main.h"
-#include <stdio.h>
 
+/**
+ * _printf - a vardaric function smilliar to printf from the stdio.h headder
+ * @format: string to be printed and search for format spicfire
+ * Return: the lenth of the text that has been printed or -1 if fails
+*/
 int _printf(const char *format, ...)
 {
 	form arr[] = {
-		{'s', print_str}, {'c', print_char},
-		{'i', print_INT}, {'d', print_INT},
-		{'%', print_percent}, {'\0', NULL}};
+				{'s', print_str}, {'c', print_char},
+				{'i', print_int}, {'d', print_INT},
+				{'b', print_binary}, {'%', print_percent},
+				{'\0', NULL}};
 
-	int i = 0, j = 0, len = 0, sum = 0;
+	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
 
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+
 	va_start(List, format);
-
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
-	{
-		return (-1);
-	}
-		if (format[0] && format[1] == ' ' && format[2] == '\0')
-		return (-1);
-
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && search_f(format[i + 1], "csid%") == 0)
+		if (format[i] == '%')
 		{
-			j = 0;
 			i++;
-			while (arr[j].f != '\0')
+			flag = search_f(format[i], "scidb%");
+			if (flag >= 0)
 			{
-				if ((format[i]) == arr[j].f)
-				{
-					i++;
-					sum += 2;
-					len += arr[j].fun(List);
-				}
-				j++;
+				len += arr[flag].fun(List);
+				sum += 2;
+				i++;
 			}
+			else
+				_putchar('%');
 		}
-
 		else
 		{
 			_putchar(format[i]);
