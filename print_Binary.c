@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * rec_binary - will edit this later
- * @n: will edit this later
- * @ptr: will edit this later
+ * rec_binary - find the binary base then print it reversly
+ * @n: the num to find it's base 2
+ * @ptr: pointer to the counter
  */
 void rec_binary(unsigned int n, unsigned int *ptr)
 {
@@ -14,17 +14,18 @@ void rec_binary(unsigned int n, unsigned int *ptr)
 		(*ptr)++;
 		return;
 	}
+
 	r = n % 2;
 	n = n / 2;
+
 	rec_binary(n, ptr);
 	_putchar(r + '0');
 	(*ptr)++;
-	return;
 }
 /**
- * print_Binary - is gonna be edited
- * @arg: i swear i will edit it
- * Return: will edite it
+ * print_Binary - prints n in base 2
+ * @arg: va_list var contains the num to convert
+ * Return: the number of digites were printed
  */
 int print_Binary(va_list arg)
 {
