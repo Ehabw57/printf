@@ -27,7 +27,7 @@ int print_int(va_list arg)
 	unsigned int i;
 	int count = 0;
 	int n = va_arg(arg, int);
-	
+
 	i = n;
 	if (i == 0)
 	{
