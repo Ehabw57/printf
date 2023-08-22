@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 				{'i', print_INT}, {'d', print_INT},
 				{'b', print_binary}, {'o', print_oct},
 				{'x', print_hex}, {'X', print_HEX},
-			       	{'%', print_percent}, {'\0', NULL}};
+				{'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
