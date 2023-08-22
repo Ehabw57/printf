@@ -45,5 +45,6 @@ int main(void)
     len2= printf("%d\n", INT_MIN);
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
+    _printf("%b\n", 98);
     return (0);
 }
