@@ -27,12 +27,14 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-   len =  _printf("test case %% if %s thin %c %c %s %t \n", "string", 'h', 'm', "thisis");
-   len2 = printf("test case %% if %s thin %c %c %s %t \n", "string", 'h', 'm', "thisis");
+   len =  _printf("test case %% if %s thin %c %c %s %r \n", "string", 'h', 'm', "thisis");
+   len2 = printf("test case %% if %s thin %c %c %s %r \n", "string", 'h', 'm', "thisis");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-      _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+    len =  _printf("Unknown:[%r]\n");
+    len2= printf("Unknown:[%r]\n");
+     _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
     _printf("%d\n", INT_MAX);
     printf("%d\n", INT_MIN);
     len = _printf("%d\n", INT_MAX);

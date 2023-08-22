@@ -3,46 +3,38 @@
 
 int _printf(const char *format, ...)
 {
-	form arr[] = {
-		{'s', print_str}, {'c', print_char},
-		{'i', print_INT}, {'d', print_INT},
-		{'%', print_percent}, {'\0', NULL}};
+        form arr[] = {
+                {'s', print_str}, {'c', print_char},
+                {'i', print_INT}, {'d', print_INT},
+                {'%', print_percent}, {'\0', NULL}};
 
-	int i = 0, j = 0, len = 0, sum = 0;
-	va_list List;
+        int i = 0, len = 0, sum = 0, flag;
+        va_list List;
 
-	va_start(List, format);
-
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
-	{
-		return (-1);
-	}
-		if (format[0] && format[1] == ' ' && format[2] == '\0')
-		return (-1);
-
+        va_start(List, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && search_f(format[i + 1], "csid%") == 0)
+		if (format[i] == '%')
 		{
-			j = 0;
 			i++;
-			while (arr[j].f != '\0')
+			flag = search_f(format[i], "scid%");
+			if (flag >= 0)
 			{
-				if ((format[i]) == arr[j].f)
-				{
-					i++;
-					sum += 2;
-					len += arr[j].fun(List);
-				}
-				j++;
+				len += arr[flag].fun(List);
+				sum += 2;
+				i++;
 			}
-		}
+			else{	
+				_putchar('%');
+			}
 
+		}
 		else
 		{
 			_putchar(format[i]);
 			i++;
 		}
+
 	}
 	va_end(List);
 	return (i + len - sum);
