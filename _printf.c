@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	form arr[] = {
 				{'s', print_str}, {'c', print_char},
-				{'i', print_int}, {'d', print_INT},
+				{'i', print_INT}, {'d', print_INT},
 				{'b', print_binary}, {'o', print_oct},
 				{'x', print_hex}, {'X', print_HEX},
 			       	{'%', print_percent}, {'\0', NULL}};
