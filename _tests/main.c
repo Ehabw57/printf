@@ -43,7 +43,7 @@ int main(void)
 p2 = _printf("%% \n");
     printf("%i %d\n",p,p);
     _printf("%i %d\n",p2,p2);
-   
+_printf("%b, %b, %b, %b\n",98 ,0 ,1 ,2);
     _printf("hello%s%x%s\n","efds");
 
 

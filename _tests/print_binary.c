@@ -9,6 +9,11 @@ int print_binary(va_list arg)
 	unsigned int num = va_arg(arg, unsigned int);
 	int i = 0, n, arr[100];
 
+	if (num == 0)
+	{
+		_putchar(0 + '0');
+		return (1);
+	}
 	while (num)
 	{
 		arr[i] = num % 2;
