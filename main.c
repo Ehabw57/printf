@@ -28,11 +28,11 @@ int main(void)
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
    len =  _printf("test case %% if %s thin %c %c %s %r \n", "string", 'h', 'm', "thisis");
-   len2 = printf("test case %% if %s thin %c %c %s %r \n", "string", 'h', 'm', "thisis");
+   len2 = printf("test case %% if %s thin %c %c %s  \n", "string", 'h', 'm', "thisis");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     len =  _printf("Unknown:[%r]\n");
-    len2= printf("Unknown:[%r]\n");
+    len2= printf("Unknown:[]\n");
      _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     _printf("%d\n", INT_MAX);
@@ -45,6 +45,9 @@ int main(void)
     len2= printf("%d\n", INT_MIN);
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("%b\n", 98);
+   len =  _printf("%b\n", 98);
+   len2 = printf("%b\n", 98);
+   _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
     return (0);
 }
