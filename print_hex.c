@@ -1,9 +1,14 @@
 #include "main.h"
+/**
+ * print_hex - to convert unsigned int to hex
+ * @arg: variable of type va_list
+ * Return: size of hex number
+ */
 int print_hex(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
 	char arr[100];
-	int i =0, n;
+	int i = 0, n;
 
 	if (num == 0)
 	{
@@ -22,6 +27,6 @@ int print_hex(va_list arg)
 	}
 
 	for (n = i - 1; n >= 0; n--)
-                _putchar(arr[n]);
-        return (i);
+		_putchar(arr[n]);
+	return (i);
 }
