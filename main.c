@@ -11,8 +11,9 @@ int main(void)
 {
     int len;
     int len2;
-   
-
+    unsigned int ui;   
+	
+    ui = (unsigned int)INT_MAX + 1024;
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
       _printf("Length:[%d, %i]\n", len, len);
@@ -27,8 +28,7 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-   len =  _printf("test case %% if %s thin %c %c %s %r \n", "string", 'h', 'm', "thisis");
-   len2 = printf("test case %% if %s thin %c %c %s  \n", "string", 'h', 'm', "thisis");
+   
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     len =  _printf("Unknown:[%r]\n");
@@ -49,5 +49,11 @@ int main(void)
    len2 = printf("%b\n", 98);
    _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
+     _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui); 
+     _printf("Unsigned hexadecimal:[%x]\n", ui);
+    printf("Unsigned hexadecimal:[%x]\n", ui);
     return (0);
 }

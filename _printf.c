@@ -10,8 +10,9 @@ int _printf(const char *format, ...)
 	form arr[] = {
 				{'s', print_str}, {'c', print_char},
 				{'i', print_int}, {'d', print_INT},
-				{'b', print_binary}, {'%', print_percent},
-				{'\0', NULL}};
+				{'b', print_binary}, {'o', print_oct},
+				{'x', print_hex}, {'X', print_HEX},
+			       	{'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
@@ -25,7 +26,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			flag = search_f(format[i], "scidb%");
+			flag = search_f(format[i], "scidboxX%");
 			if (flag >= 0)
 			{
 				len += arr[flag].fun(List);
