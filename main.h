@@ -24,7 +24,11 @@ int print_int(va_list arg);
 int print_INT(va_list arg);
 int print_percent(void);
 int print_binary(va_list arg);
+<<<<<<< HEAD
 int print_oct(va_list arg);
 int print_hex(va_list arg);
 int print_HEX(va_list arg);
+=======
+int print_Binary(va_list arg);
+>>>>>>> 8f0c3561089785787f78557a078f0abea64ecb6c
 #endif

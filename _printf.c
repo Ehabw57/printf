@@ -9,10 +9,16 @@ int _printf(const char *format, ...)
 {
 	form arr[] = {
 				{'s', print_str}, {'c', print_char},
+<<<<<<< HEAD
 				{'i', print_int}, {'d', print_INT},
 				{'b', print_binary}, {'o', print_oct},
 				{'x', print_hex}, {'X', print_HEX},
 			       	{'%', print_percent}, {'\0', NULL}};
+=======
+				{'i', print_INT}, {'d', print_INT},
+				{'b', print_Binary}, {'%', print_percent},
+				{'\0', NULL}};
+>>>>>>> 8f0c3561089785787f78557a078f0abea64ecb6c
 
 	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
