@@ -7,29 +7,22 @@
 int print_rot(va_list arg)
 {
 	char *s = va_arg(arg, char *);
-	int i, j, len = 0, l;
-	char *input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i, j;
+	char *input = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *output = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	if (s == NULL)
 		s = "(null)";
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		l = 0;
-		for (j = 0; output[j] != '\0' && !l; j++)
+		for (j = 0; input[j] != '\0'; j++)
 		{
-			if (s[i] == output[j])
+			if (s[i] == input[j])
 			{
-				_putchar(input[i]);
-				len++;
-				l = 1;
+				_putchar(output[j]);
+				break;
 			}
 		}
-		if (!l)
-		{
-			_putchar(s[i]);
-			len++;
-		}
 	}
-	return (len);
+	return (i);
 }

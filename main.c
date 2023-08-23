@@ -85,5 +85,7 @@ int main(void)
     len2 = printf("Unsigned octal:[%o]\n", ui);
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
+	len =_printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	 _printf("Len:[%d]\n", len);
     return (0);
 }
