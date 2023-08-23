@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			flag = search_f(format[i], "scidboxXuS%");
+			flag = search_f(format[i], "scidboxXuSr%");
 			if (flag >= 0)
 			{
 				len += arr[flag].fun(List);
