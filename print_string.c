@@ -38,14 +38,10 @@ int print_string(va_list arg)
 	char *ptr = va_arg(arg, char *);
 	int asci, i;
 	int len = 0;
-	char null[] = "(null)";
 
-	if (!ptr)
-	{
-		for (i = 0; null[i] != '\0'; i++)
-			_putchar(null[i]);
-		return (6);
-	}
+	if (ptr == NULL)
+		ptr = "(null)";
+
 	for (i = 0; ptr[i] != '\0'; i++)
 	{
 		asci = ptr[i];
@@ -62,7 +58,10 @@ int print_string(va_list arg)
 			len += convert(asci);
 		}
 		else
+		{
 			_putchar(ptr[i]);
+			len++;
+		}
 	}
-	return (i + len);
+	return (len);
 }

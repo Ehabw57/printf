@@ -59,6 +59,7 @@ int main(void)
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned:[%u]\n", -19);
     printf("Unsigned:[%u]\n", -19);
-     _printf("%S\n", "Best\nSchool");
+     len = _printf("%S\n", "Best\nSchool");
+      _printf("Len:[%d]\n", len);
     return (0);
 }
