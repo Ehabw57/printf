@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 				{'b', print_binary}, {'o', print_oct},
 				{'x', print_hex}, {'X', print_HEX},
 				{'u', print_unsigned}, {'S', print_string},
-				{'r', print_rev}, {'%', print_percent},
-				{'\0', NULL}};
+				{'r', print_rev}, {'R', print_rot},
+				{'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, len = 0, sum = 0, flag;
 	va_list List;
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			flag = search_f(format[i], "scidboxXuSr%");
+			flag = search_f(format[i], "scidboxXuSrR%");
 			if (flag >= 0)
 			{
 				len += arr[flag].fun(List);

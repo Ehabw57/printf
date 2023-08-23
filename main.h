@@ -31,4 +31,5 @@ int print_Binary(va_list arg);
 int print_unsigned(va_list arg);
 int print_string(va_list arg);
 int print_rev(va_list arg);
+int print_rot(va_list arg);
 #endif
