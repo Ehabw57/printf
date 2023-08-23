@@ -12,8 +12,7 @@ int print_rev(va_list arg)
 	if (str == NULL)
 		str = "(null)";
 
-	for (i = 0; str[i] != '\0'; i++)
-		i++;
+	for (i = 0; str[i] != '\0'; i++);
 
 	for (j = i - 1; j >= 0; j--)
 		_putchar(str[j]);
