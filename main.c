@@ -55,5 +55,10 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui); 
      _printf("Unsigned hexadecimal:[%x]\n", ui);
     printf("Unsigned hexadecimal:[%x]\n", ui);
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned:[%u]\n", -19);
+    printf("Unsigned:[%u]\n", -19);
+     _printf("%S\n", "Best\nSchool");
     return (0);
 }

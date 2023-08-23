@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 				{'i', print_INT}, {'d', print_INT},
 				{'b', print_binary}, {'o', print_oct},
 				{'x', print_hex}, {'X', print_HEX},
+				{'u', print_unsigned}, {'S', print_string},
 				{'%', print_percent}, {'\0', NULL}};
 
 	int i = 0, len = 0, sum = 0, flag;
@@ -26,7 +27,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			flag = search_f(format[i], "scidboxX%");
+			flag = search_f(format[i], "scidboxXuS%");
 			if (flag >= 0)
 			{
 				len += arr[flag].fun(List);

@@ -28,4 +28,6 @@ int print_oct(va_list arg);
 int print_hex(va_list arg);
 int print_HEX(va_list arg);
 int print_Binary(va_list arg);
+int print_unsigned(va_list arg);
+int print_string(va_list arg);
 #endif
