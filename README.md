@@ -82,3 +82,11 @@ int search_f(char f, char *c)
 	return (-1);
 }
 ``````
+____________
+### _putchar.c
+Our main output function which uses write keyword to wrint in the standerd output stream
+```c
+int _putchar(int s)
+{
+	return (write(1, &s, 1));
+}```  
