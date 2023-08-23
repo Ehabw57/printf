@@ -11,6 +11,8 @@ int print_rot(va_list arg)
 	char *input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	if (s == NULL)
+		s = "(null)";
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; output[j] != '\0'; j++)
