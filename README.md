@@ -89,4 +89,4 @@ Our main output function which uses write keyword to wrint in the standerd outpu
 int _putchar(int s)
 {
 	return (write(1, &s, 1));
-}```  
+}```

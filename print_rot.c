@@ -7,6 +7,7 @@
 int print_rot(va_list arg)
 {
 	char *s = va_arg(arg, char *);
+	*s = va_arg(arg, char *);
 	int i, j;
 	char *input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";

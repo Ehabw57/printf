@@ -32,7 +32,7 @@ int main(void)
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     len =  _printf("Unknown:[%r]\n");
-    len2= printf("Unknown:[]\n");
+    len2= printf("Unknown:[%r]\n");
      _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     _printf("%d\n", INT_MAX);

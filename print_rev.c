@@ -7,12 +7,13 @@
 int print_rev(va_list arg)
 {
 	char *str = va_arg(arg, char *);
-	int j, i;
+	int j, i = 0;
 
 	if (str == NULL)
 		str = "(null)";
 
-	for (i = 0; str[i] != '\0'; i++);
+	while (str[i] != '\0')
+		i++;
 
 	for (j = i - 1; j >= 0; j--)
 		_putchar(str[j]);
