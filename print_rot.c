@@ -23,6 +23,8 @@ int print_rot(va_list arg)
 				break;
 			}
 		}
+		if (input[j] == '\0')
+				_putchar(s[i]);
 	}
 	return (i);
 }
